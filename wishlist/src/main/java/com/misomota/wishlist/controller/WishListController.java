@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("Gaveæsken")
+@RequestMapping("/Gaveæsken")
 public class WishListController {
     private final WishListService wishListService;
 

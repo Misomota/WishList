@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a7b0f64-859a-47bc-9840-651b21d19781" name="Changes" comment="tilføjet application properties">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/addWish.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/addWishList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/controller/WishListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/controller/WishListController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -36,22 +39,22 @@
     &quot;assignee&quot;: &quot;codebymks&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Misomota/WishList.git",
-    "accountId": "97d9fec6-ed19-4b0b-b3d2-16f277e5d440"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Misomota/WishList.git&quot;,
+    &quot;accountId&quot;: &quot;97d9fec6-ed19-4b0b-b3d2-16f277e5d440&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "Misomota",
-    "repository": "WishList"
+    &quot;owner&quot;: &quot;Misomota&quot;,
+    &quot;repository&quot;: &quot;WishList&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -65,6 +68,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -72,6 +76,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.WishlistApplication.executor": "Run",
     "git-widget-placeholder": "AddAndDelete",
     "last_opened_file_path": "/Users/mie/Library/CloudStorage/OneDrive-Personal/DatamatikerPortfolio/wishlist",
@@ -85,6 +90,11 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "configurable.group.appearance",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -119,6 +129,7 @@
       <workItem from="1761213860755" duration="2436000" />
       <workItem from="1761220727130" duration="1551000" />
       <workItem from="1761293464564" duration="27000" />
+      <workItem from="1761302560248" duration="2249000" />
     </task>
     <task id="LOCAL-00001" summary="Unversioned Files">
       <option name="closed" value="true" />
@@ -168,7 +179,23 @@
       <option name="project" value="LOCAL" />
       <updated>1761300101423</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="tilføjet application properties">
+      <option name="closed" value="true" />
+      <created>1761302192452</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761302192452</updated>
+    </task>
+    <task id="LOCAL-00008" summary="tilføjet application properties">
+      <option name="closed" value="true" />
+      <created>1761302437225</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1761302437225</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
