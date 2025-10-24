@@ -1,5 +1,6 @@
 package com.misomota.wishlist.repository;
 
+import com.misomota.wishlist.model.GiftWish;
 import com.misomota.wishlist.model.WishList;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -28,22 +29,39 @@ public class WishListRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public WishList addWishList(String wishList) {
-        String sql = "INSERT INTO WishList (wishListName) values (?)";
+    private int insertAndReturnKey(String sql, String value) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
-
-        jdbcTemplate.update(x -> {
-            PreparedStatement preparedStatement = x.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setString(1,wishList);
-            return preparedStatement;
+        jdbcTemplate.update(connection -> {
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, value);
+            return ps;
         }, keyHolder);
+        return keyHolder.getKey() != null ? keyHolder.getKey().intValue() : -1;
+    }
 
-        int wishListID = keyHolder.getKey() !=null ? keyHolder.getKey().intValue() : -1;
-
-        if (wishListID != -1) {
+    public WishList addWishList(String wishList) {
+        int name = insertAndReturnKey("INSERT INTO WishList WHERE WishListName = ?", wishList);
+        if (name != -1) {
             return new WishList(wishList);
-        } else {
-            throw new RuntimeException("Could not insert wishlist!");
         }
+        else throw new RuntimeException("Could not insert wishlist!");
+    }
+
+    public GiftWish addGiftWish(String giftList) {
+        int name = insertAndReturnKey("INSERT INTO GiftList WHERE WishName = ?", giftList);
+        if (name != -1) {
+            return new GiftWish(giftList);
+        }
+        else throw new RuntimeException("Could not insert giftlist!");
+    }
+
+    public void deleteGiftList(int GiftListID){
+        String sqlDelete = "DELETE FROM GiftList where WishListID = ?";
+        jdbcTemplate.update(sqlDelete, GiftListID);
+    }
+
+    public void deleteWishList(int WishID){
+        String sqlDelete = "DELETE FROM WishList where WishID = ?";
+        jdbcTemplate.update(sqlDelete, WishID);
     }
 }
