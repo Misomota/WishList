@@ -39,29 +39,29 @@ public class WishListRepository {
         return keyHolder.getKey() != null ? keyHolder.getKey().intValue() : -1;
     }
 
-    public WishList addWishList(String wishList) {
-        int name = insertAndReturnKey("INSERT INTO WishList WHERE WishListName = ?", wishList);
+    public WishList addWishList(WishList wishList) {
+        int name = insertAndReturnKey("INSERT INTO WishList (WishListName) VALUES (?)", wishList.getWishListName());
         if (name != -1) {
-            return new WishList(wishList);
+            return new WishList(wishList.getWishListName());
         }
         else throw new RuntimeException("Could not insert wishlist!");
     }
 
-    public GiftWish addGiftWish(String giftList) {
-        int name = insertAndReturnKey("INSERT INTO GiftList WHERE WishName = ?", giftList);
+    public GiftWish addGiftWish(GiftWish giftList) {
+        int name = insertAndReturnKey("INSERT INTO GiftList (WishName) VALUES (?)", giftList.getGiftWish());
         if (name != -1) {
-            return new GiftWish(giftList);
+            return new GiftWish(giftList.getGiftWish());
         }
         else throw new RuntimeException("Could not insert giftlist!");
     }
 
     public void deleteGiftList(int GiftListID){
-        String sqlDelete = "DELETE FROM GiftList where WishListID = ?";
+        String sqlDelete = "DELETE FROM GiftList where WishID = ?";
         jdbcTemplate.update(sqlDelete, GiftListID);
     }
 
-    public void deleteWishList(int WishID){
-        String sqlDelete = "DELETE FROM WishList where WishID = ?";
-        jdbcTemplate.update(sqlDelete, WishID);
+    public void deleteWishList(int WishListID){
+        String sqlDelete = "DELETE FROM WishList where WishListID = ?";
+        jdbcTemplate.update(sqlDelete, WishListID);
     }
 }
