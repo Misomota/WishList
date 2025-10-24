@@ -60,8 +60,9 @@ public class WishListRepository {
         jdbcTemplate.update(sqlDelete, GiftListID);
     }
 
-    public void deleteWishList(int WishListID){
+    public WishList deleteWishList(int WishListID){
         String sqlDelete = "DELETE FROM WishList where WishListID = ?";
         jdbcTemplate.update(sqlDelete, WishListID);
+        return null;
     }
 }
