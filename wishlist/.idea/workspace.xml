@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a7b0f64-859a-47bc-9840-651b21d19781" name="Changes" comment="">
+    <list default="true" id="4a7b0f64-859a-47bc-9840-651b21d19781" name="Changes" comment="tilføjet application properties">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="setup" />
+        <entry key="$PROJECT_DIR$/.." value="CreateRepository" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -33,12 +36,22 @@
     &quot;assignee&quot;: &quot;codebymks&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Misomota/WishList.git&quot;,
-    &quot;accountId&quot;: &quot;97d9fec6-ed19-4b0b-b3d2-16f277e5d440&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Misomota/WishList.git",
+    "accountId": "97d9fec6-ed19-4b0b-b3d2-16f277e5d440"
+  },
+  "recentNewPullRequestHead": {
+    "server": {
+      "useHttp": false,
+      "host": "github.com",
+      "port": null,
+      "suffix": null
+    },
+    "owner": "Misomota",
+    "repository": "WishList"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -50,27 +63,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mie/Library/CloudStorage/OneDrive-Personal/DatamatikerPortfolio/wishlist&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.WishlistApplication.executor": "Run",
+    "git-widget-placeholder": "AddAndDelete",
+    "last_opened_file_path": "/Users/mie/Library/CloudStorage/OneDrive-Personal/DatamatikerPortfolio/wishlist",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="WishlistApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="DEV_PASSWORD" value="kunMow-gozpax-rugmi7" />
+        <env name="DEV_DATABASE_URL" value="jdbc:mysql://localhost:3306/Miniprojekt" />
+        <env name="DEV_USERNAME" value="root" />
+      </envs>
       <module name="wishlist" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.misomota.wishlist.WishlistApplication" />
       <method v="2">
@@ -121,7 +144,31 @@
       <option name="project" value="LOCAL" />
       <updated>1761215763465</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add og delete tilføjet">
+      <option name="closed" value="true" />
+      <created>1761297838416</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761297838416</updated>
+    </task>
+    <task id="LOCAL-00005" summary="rettelser i repository og tilføjet controller klasse">
+      <option name="closed" value="true" />
+      <created>1761299130610</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761299130610</updated>
+    </task>
+    <task id="LOCAL-00006" summary="tilføjet add i controller">
+      <option name="closed" value="true" />
+      <created>1761300101423</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761300101423</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +178,10 @@
     <MESSAGE value="Unversioned Files" />
     <MESSAGE value="WishList class added" />
     <MESSAGE value="tilføjet JdbcTemplate og addwishlist metode" />
-    <option name="LAST_COMMIT_MESSAGE" value="tilføjet JdbcTemplate og addwishlist metode" />
+    <MESSAGE value="Add og delete tilføjet" />
+    <MESSAGE value="rettelser i repository og tilføjet controller klasse" />
+    <MESSAGE value="tilføjet add i controller" />
+    <MESSAGE value="tilføjet application properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="tilføjet application properties" />
   </component>
 </project>
