@@ -37,7 +37,8 @@ public class WishListRepository {
         @Override
         public WishList mapRow(ResultSet rs, int rowNum) throws SQLException {
             return new WishList(
-                    rs.getString("wishListName")
+                    rs.getString("wishListName"),
+                    rs.getInt("id")
             );
         }
     };
@@ -71,10 +72,10 @@ public class WishListRepository {
         return keyHolder.getKey() != null ? keyHolder.getKey().intValue() : -1;
     }
 
-    public WishList addWishList(WishList wishList) {
+    public WishList addWishList(WishList wishList, int id) {
         int name = insertAndReturnKey("INSERT INTO WishList (WishListName) VALUES (?)", wishList.getWishListName());
         if (name != -1) {
-            return new WishList(wishList.getWishListName());
+            return new WishList(wishList.getWishListName(),id);
         }
         else throw new RuntimeException("Could not insert wishlist!");
     }
@@ -102,4 +103,10 @@ public class WishListRepository {
         String sqlUpdate = "UPDATE WishName WHERE WishID = ?";
         jdbcTemplate.update(sqlUpdate, WishID);
     }
+
+    public WishList findWishListById(int id) {
+        String sql = "SELECT WishListID, WishListName FROM WishList WHERE WishListID = ?";
+        return jdbcTemplate.queryForObject(sql, wishListRowMapper, id);
+    }
+
 }

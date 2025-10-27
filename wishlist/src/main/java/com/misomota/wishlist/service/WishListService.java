@@ -24,7 +24,7 @@ public class WishListService {
     }
 
     public WishList addWishList(WishList wishlist) {
-        return wishListRepository.addWishList(wishlist);
+        return wishListRepository.addWishList(wishlist, wishlist.getId());
     }
 
     public WishList deleteWishList(int WishListID) {
@@ -33,5 +33,9 @@ public class WishListService {
 
     public WishList deleteGiftWish(int WishID) {
         return wishListRepository.deleteWishList(WishID);
+    }
+
+    public WishList findWishListByid(int id) {
+        return wishListRepository.findWishListById(id);
     }
 }
