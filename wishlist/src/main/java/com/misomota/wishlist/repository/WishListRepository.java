@@ -4,12 +4,16 @@ import com.misomota.wishlist.model.GiftWish;
 import com.misomota.wishlist.model.WishList;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 @Repository
 public class WishListRepository {
@@ -27,6 +31,34 @@ public class WishListRepository {
 
     public WishListRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+    }
+
+    private final RowMapper<WishList> wishListRowMapper = new RowMapper<>() {
+        @Override
+        public WishList mapRow(ResultSet rs, int rowNum) throws SQLException {
+            return new WishList(
+                    rs.getString("wishListName")
+            );
+        }
+    };
+
+    private final RowMapper<GiftWish> giftWishRowMapper = new RowMapper<>() {
+        @Override
+        public GiftWish mapRow(ResultSet rs, int rowNum) throws SQLException {
+            return new GiftWish(
+                    rs.getString("giftWish")
+            );
+        }
+    };
+
+    public List<WishList> getWishList() {
+        String sql = "SELECT WishListName FROM WishList";
+        return jdbcTemplate.query(sql, wishListRowMapper);
+    }
+
+    public List<GiftWish> getGiftWish() {
+        String sql = "SELECT WishName FROM GiftWish";
+        return jdbcTemplate.query(sql, giftWishRowMapper);
     }
 
     private int insertAndReturnKey(String sql, String value) {
