@@ -3,6 +3,10 @@ package com.misomota.wishlist.model;
 public class GiftWish {
     private String giftWish;
 
+    public GiftWish() {
+
+    }
+
     public GiftWish(String giftWish) {
         this.giftWish = giftWish;
     }
