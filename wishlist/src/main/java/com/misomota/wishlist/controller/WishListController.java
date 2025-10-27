@@ -5,10 +5,8 @@ import com.misomota.wishlist.model.WishList;
 import com.misomota.wishlist.service.WishListService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @Controller
@@ -54,4 +52,15 @@ public class WishListController {
         return "addWish";
     }
 
+    @PostMapping("/delete/wishList")
+    public String deleteWishList(@RequestParam Integer id) {
+        wishListService.deleteWishList(id);
+        return "redirect:/showWishList";
+    }
+
+    @PostMapping("/delete/giftWish")
+    public String deletegiftWish(@RequestParam Integer id) {
+        wishListService.deleteGiftWish(id);
+        return "redirect:/showWishList";
+    }
 }
