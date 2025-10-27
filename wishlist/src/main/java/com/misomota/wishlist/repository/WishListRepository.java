@@ -97,4 +97,9 @@ public class WishListRepository {
         jdbcTemplate.update(sqlDelete, WishListID);
         return null;
     }
+
+    public void updateWishList(int WishID) {
+        String sqlUpdate = "UPDATE WishName WHERE WishID = ?";
+        jdbcTemplate.update(sqlUpdate, WishID);
+    }
 }
