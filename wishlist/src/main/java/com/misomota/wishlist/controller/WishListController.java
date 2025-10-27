@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import java.util.List;
 
 @Controller
 @RequestMapping("/Gaveæsken")
@@ -18,6 +19,21 @@ public class WishListController {
     public WishListController(WishListService wishListService) {
         this.wishListService = wishListService;
     }
+
+    @GetMapping("/MyWishList")
+    public String showWishList(Model model) {
+        List<WishList> wishList = wishListService.showWishList();
+        model.addAttribute("wishList", wishList);
+        return "showWishList";
+    }
+
+    @GetMapping("/MyWishes")
+    public String showGiftWishList(Model model) {
+        List<GiftWish> giftWish = wishListService.showGiftWish();
+        model.addAttribute("giftWish", giftWish);
+        return "showGiftWish";
+    }
+
     @GetMapping("/addWishList")
     public String addWishList(Model model) {
         WishList wishList = new WishList();
@@ -28,7 +44,7 @@ public class WishListController {
     @PostMapping("/addWishList")
     public String saveWishList(@ModelAttribute("WishList") WishList wishList) {
         wishListService.addWishList(wishList);
-        return "redirect:/Gaveæsken";
+        return "redirect:/showWishList";
     }
 
     @GetMapping("/addWish")

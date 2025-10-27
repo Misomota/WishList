@@ -23,7 +23,6 @@ public class WishListService {
         return wishListRepository.getGiftWish();
     }
 
-
     public WishList addWishList(WishList wishlist) {
         return wishListRepository.addWishList(wishlist);
     }
