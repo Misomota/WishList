@@ -6,6 +6,8 @@ import com.misomota.wishlist.service.WishListService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -22,6 +24,12 @@ public class WishListController {
         WishList wishList = new WishList();
         model.addAttribute("WishList", wishList);
         return "addWishList";
+    }
+
+    @PostMapping("/addWishList")
+    public String saveWishList(@ModelAttribute("WishList") WishList wishList) {
+        wishListService.addWishList(wishList);
+        return "redirect:/Gaveæsken";
     }
 
     @GetMapping("/addWish")
