@@ -2,6 +2,7 @@ package com.misomota.wishlist.controller;
 
 import com.misomota.wishlist.model.GiftWish;
 import com.misomota.wishlist.model.WishList;
+import com.misomota.wishlist.repository.WishListRepository;
 import com.misomota.wishlist.service.WishListService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +14,11 @@ import java.util.List;
 @RequestMapping("/Gaveæsken")
 public class WishListController {
     private final WishListService wishListService;
+    private final WishListRepository wishListRepository;
 
-    public WishListController(WishListService wishListService) {
+    public WishListController(WishListService wishListService, WishListRepository wishListRepository) {
         this.wishListService = wishListService;
+        this.wishListRepository = wishListRepository;
     }
 
     @GetMapping("/MyWishList")
@@ -62,5 +65,17 @@ public class WishListController {
     public String deletegiftWish(@RequestParam Integer id) {
         wishListService.deleteGiftWish(id);
         return "redirect:/showWishList";
+    }
+
+    @GetMapping("/editWishList")
+    public String editWishList(@RequestParam int id, Model model) {
+        WishList wishList = wishListService.findWishListByid(id);
+        //wishListService.updateWishList(id);
+        if (wishList != null) {
+            model.addAttribute("WishList", wishList);
+            return "editWishList";
+        } else {
+            return "redirect:/Gaveæsken/MyWishList";
+        }
     }
 }
