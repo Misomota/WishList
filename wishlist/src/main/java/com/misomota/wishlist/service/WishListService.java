@@ -30,4 +30,8 @@ public class WishListService {
     public WishList deleteWishList(int WishListID) {
         return wishListRepository.deleteWishList(WishListID);
     }
+
+    public WishList deleteGiftWish(int WishID) {
+        return wishListRepository.deleteWishList(WishID);
+    }
 }
