@@ -33,79 +33,21 @@ public class WishListRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    private final RowMapper<WishList> wishListRowMapper = new RowMapper<>() {
-        @Override
-        public WishList mapRow(ResultSet rs, int rowNum) throws SQLException {
-            return new WishList(
-                    rs.getString("wishListName"),
-                    rs.getInt("id")
+    private final RowMapper<WishList> wishListRowMapper = (rs, rowNum) ->
+            new WishList(
+                    rs.getString("WishListName"),
+                    rs.getInt("WishListID")
             );
-        }
-    };
 
-    private final RowMapper<GiftWish> giftWishRowMapper = new RowMapper<>() {
-        @Override
-        public GiftWish mapRow(ResultSet rs, int rowNum) throws SQLException {
-            return new GiftWish(
-                    rs.getString("giftWish"),
-                    rs.getInt("id")
+    private final RowMapper<GiftWish> giftWishRowMapper = (rs, rowNum) ->
+            new GiftWish(
+                    rs.getString("WishName"),
+                    rs.getInt("WishID")
             );
-        }
-    };
 
     public List<WishList> getWishList() {
-        String sql = "SELECT WishListName FROM WishList";
+        String sql = "SELECT WishListID, WishListName FROM WishList";
         return jdbcTemplate.query(sql, wishListRowMapper);
-    }
-
-    public List<GiftWish> getGiftWish() {
-        String sql = "SELECT WishName FROM GiftWish";
-        return jdbcTemplate.query(sql, giftWishRowMapper);
-    }
-
-    private int insertAndReturnKey(String sql, String value) {
-        KeyHolder keyHolder = new GeneratedKeyHolder();
-        jdbcTemplate.update(connection -> {
-            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, value);
-            return ps;
-        }, keyHolder);
-        return keyHolder.getKey() != null ? keyHolder.getKey().intValue() : -1;
-    }
-
-    public WishList addWishList(WishList wishList, int id) {
-        int name = insertAndReturnKey("INSERT INTO WishList (WishListName) VALUES (?)", wishList.getWishListName());
-        if (name != -1) {
-            return new WishList(wishList.getWishListName(),id);
-        }
-        else throw new RuntimeException("Could not insert wishlist!");
-    }
-
-    public GiftWish addGiftWish(GiftWish giftList, int id) {
-        int name = insertAndReturnKey("INSERT INTO GiftList (WishName) VALUES (?)", giftList.getGiftWish());
-        if (name != -1) {
-            return new GiftWish(giftList.getGiftWish(), id);
-        } else {
-            throw new RuntimeException("Could not insert gift list!");
-        }
-    }
-
-    public GiftWish deleteGiftList(int GiftListID){
-        String sqlDelete = "DELETE FROM GiftList where WishID = ?";
-        jdbcTemplate.update(sqlDelete, GiftListID);
-        return null;
-    }
-
-    public WishList deleteWishList(int WishListID){
-        String sqlDelete = "DELETE FROM WishList where WishListID = ?";
-        jdbcTemplate.update(sqlDelete, WishListID);
-        return null;
-    }
-
-    public WishList updateWishList(int WishID) {
-        String sqlUpdate = "UPDATE WishName WHERE WishID = ?";
-        jdbcTemplate.update(sqlUpdate, WishID);
-        return null;
     }
 
     public WishList findWishListById(int id) {
@@ -113,4 +55,52 @@ public class WishListRepository {
         return jdbcTemplate.queryForObject(sql, wishListRowMapper, id);
     }
 
+    public WishList addWishList(WishList wishList) {
+        String sql = "INSERT INTO WishList (WishListName) VALUES (?)";
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+
+        jdbcTemplate.update(con -> {
+            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, wishList.getWishListName());
+            return ps;
+        }, keyHolder);
+
+        int newId = keyHolder.getKey() != null ? keyHolder.getKey().intValue() : -1;
+        return new WishList(wishList.getWishListName(), newId);
+    }
+
+    public void deleteWishList(int wishListId) {
+        String sql = "DELETE FROM WishList WHERE WishListID = ?";
+        jdbcTemplate.update(sql, wishListId);
+    }
+
+    public void updateWishList(WishList wishList) {
+        String sql = "UPDATE WishList SET WishListName = ? WHERE WishListID = ?";
+        jdbcTemplate.update(sql, wishList.getWishListName(), wishList.getId());
+    }
+
+    public List<GiftWish> getGiftWish() {
+        String sql = "SELECT WishID, WishName FROM GiftWish";
+        return jdbcTemplate.query(sql, giftWishRowMapper);
+    }
+
+    public GiftWish addGiftWish(GiftWish giftWish, int wishListId) {
+        String sql = "INSERT INTO GiftWish (WishName, WishListID) VALUES (?, ?)";
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+
+        jdbcTemplate.update(con -> {
+            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, giftWish.getGiftWish());
+            ps.setInt(2, wishListId);
+            return ps;
+        }, keyHolder);
+
+        int newId = keyHolder.getKey() != null ? keyHolder.getKey().intValue() : -1;
+        return new GiftWish(giftWish.getGiftWish(), newId);
+    }
+
+    public void deleteGiftWish(int wishId) {
+        String sql = "DELETE FROM GiftWish WHERE WishID = ?";
+        jdbcTemplate.update(sql, wishId);
+    }
 }
