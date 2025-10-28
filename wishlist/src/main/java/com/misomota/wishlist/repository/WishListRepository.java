@@ -85,8 +85,9 @@ public class WishListRepository {
         int name = insertAndReturnKey("INSERT INTO GiftList (WishName) VALUES (?)", giftList.getGiftWish());
         if (name != -1) {
             return new GiftWish(giftList.getGiftWish(), id);
+        } else {
+            throw new RuntimeException("Could not insert gift list!");
         }
-        else throw new RuntimeException("Could not insert gift list!");
     }
 
     public GiftWish deleteGiftList(int GiftListID){
