@@ -35,11 +35,11 @@ public class WishListService {
         return wishListRepository.deleteGiftList(id);
     }
 
-    public WishList updateWishList(int wishID, WishList wishlist) {
-        wishListRepository.updateWishList(wishID);
-        return wishListRepository.updateWishList(wishlist.getId());
+    public WishList updateWishList(int wishID) {
+        return wishListRepository.updateWishList(wishID);
 
     }
+
     public WishList findWishListByid(int id) {
         return wishListRepository.findWishListById(id);
     }

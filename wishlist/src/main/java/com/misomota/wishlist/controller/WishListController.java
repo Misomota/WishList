@@ -75,4 +75,10 @@ public class WishListController {
             return "redirect:/Gaveæsken/MyWishList";
         }
     }
+
+    @PostMapping("/update")
+    public String updateWishList(@ModelAttribute int wishlist) {
+        wishListService.updateWishList(wishlist);
+        return "redirect:/showWishList";
+    }
 }
