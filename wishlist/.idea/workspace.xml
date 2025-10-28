@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4a7b0f64-859a-47bc-9840-651b21d19781" name="Changes" comment="rettelser i controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/controller/WishListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/controller/WishListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/repository/WishListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/repository/WishListRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/service/WishListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/service/WishListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addWish.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/showWishList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/showWishList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/controller/WishListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/controller/WishListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/model/WishList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/model/WishList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/repository/WishListRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/repository/WishListRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/service/WishListService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/service/WishListService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/addWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addWish.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +75,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.WishlistApplication.executor": "Run",
-    "git-widget-placeholder": "SaveWish",
+    "git-widget-placeholder": "SaveGiftWish",
     "last_opened_file_path": "/Users/mie/Library/CloudStorage/OneDrive-Personal/DatamatikerPortfolio/wishlist",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
