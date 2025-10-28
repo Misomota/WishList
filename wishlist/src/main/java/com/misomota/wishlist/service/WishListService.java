@@ -28,7 +28,7 @@ public class WishListService {
     }
 
     public GiftWish addWish(GiftWish giftWish) {
-        return wishListRepository.addGiftWish(giftWish);
+        return wishListRepository.addGiftWish(giftWish, giftWish.getGiftId());
     }
 
     public WishList deleteWishList(int WishListID) {
