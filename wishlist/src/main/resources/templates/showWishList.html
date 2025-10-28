@@ -21,10 +21,12 @@
                 <input type="hidden" th:name="id" th:value="${showWish.id}" />
                 <button type="submit">Delete</button>
             </form>
+            <a th:href="@{/Gaveæsken/MyWishes}">vis ønskelisten</a>
         </td>
     </tr>
     </tbody>
 </table>
+<a th:href="@{/Gaveæsken/addWishList}">Tilføj ønskeliste</a>
 
 </body>
 </html>
