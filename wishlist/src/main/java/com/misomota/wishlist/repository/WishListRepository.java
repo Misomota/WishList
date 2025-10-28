@@ -47,7 +47,8 @@ public class WishListRepository {
         @Override
         public GiftWish mapRow(ResultSet rs, int rowNum) throws SQLException {
             return new GiftWish(
-                    rs.getString("giftWish")
+                    rs.getString("giftWish"),
+                    rs.getInt("id")
             );
         }
     };
@@ -80,17 +81,18 @@ public class WishListRepository {
         else throw new RuntimeException("Could not insert wishlist!");
     }
 
-    public GiftWish addGiftWish(GiftWish giftList) {
+    public GiftWish addGiftWish(GiftWish giftList, int id) {
         int name = insertAndReturnKey("INSERT INTO GiftList (WishName) VALUES (?)", giftList.getGiftWish());
         if (name != -1) {
-            return new GiftWish(giftList.getGiftWish());
+            return new GiftWish(giftList.getGiftWish(), id);
         }
-        else throw new RuntimeException("Could not insert giftlist!");
+        else throw new RuntimeException("Could not insert gift list!");
     }
 
-    public void deleteGiftList(int GiftListID){
+    public GiftWish deleteGiftList(int GiftListID){
         String sqlDelete = "DELETE FROM GiftList where WishID = ?";
         jdbcTemplate.update(sqlDelete, GiftListID);
+        return null;
     }
 
     public WishList deleteWishList(int WishListID){
@@ -99,9 +101,10 @@ public class WishListRepository {
         return null;
     }
 
-    public void updateWishList(int WishID) {
+    public WishList updateWishList(int WishID) {
         String sqlUpdate = "UPDATE WishName WHERE WishID = ?";
         jdbcTemplate.update(sqlUpdate, WishID);
+        return null;
     }
 
     public WishList findWishListById(int id) {
