@@ -63,4 +63,16 @@ public class WishListController {
         wishListService.deleteGiftWish(id);
         return "redirect:/showWishList";
     }
+
+    @GetMapping("/editWishList")
+    public String editWishList(@RequestParam int id, Model model) {
+        WishList wishList = wishListService.findWishListByid(id);
+        //wishListService.updateWishList(id);
+        if (wishList != null) {
+            model.addAttribute("WishList", wishList);
+            return "editWishList";
+        } else {
+            return "redirect:/Gaveæsken/MyWishList";
+        }
+    }
 }
