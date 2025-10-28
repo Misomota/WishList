@@ -80,10 +80,10 @@ public class WishListRepository {
         else throw new RuntimeException("Could not insert wishlist!");
     }
 
-    public GiftWish addGiftWish(GiftWish giftList) {
-        int name = insertAndReturnKey("INSERT INTO GiftList (WishName) VALUES (?)", giftList.getGiftWish());
+    public GiftWish addGiftWish(GiftWish giftWish) {
+        int name = insertAndReturnKey("INSERT INTO GiftWish (WishName) VALUES (?)", giftWish.getGiftWish());
         if (name != -1) {
-            return new GiftWish(giftList.getGiftWish());
+            return new GiftWish(giftWish.getGiftWish());
         }
         else throw new RuntimeException("Could not insert giftlist!");
     }
