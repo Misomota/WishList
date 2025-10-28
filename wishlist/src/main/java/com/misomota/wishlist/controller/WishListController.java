@@ -48,8 +48,14 @@ public class WishListController {
     @GetMapping("/addWish")
     public String addWish(Model model) {
         GiftWish giftWish = new GiftWish();
-        model.addAttribute("Wish", giftWish);
+        model.addAttribute("GiftWish", giftWish);
         return "addWish";
+    }
+
+    @PostMapping("/addWish")
+    public String saveWish(@ModelAttribute("GiftWish") GiftWish giftWish) {
+        wishListService.addWish(giftWish);
+        return "redirect:/showGiftWish";
     }
 
     @PostMapping("/delete/wishList")

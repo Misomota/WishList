@@ -27,6 +27,10 @@ public class WishListService {
         return wishListRepository.addWishList(wishlist, wishlist.getId());
     }
 
+    public GiftWish addWish(GiftWish giftWish) {
+        return wishListRepository.addGiftWish(giftWish, giftWish.getGiftId());
+    }
+
     public WishList deleteWishList(int WishListID) {
         return wishListRepository.deleteWishList(WishListID);
     }
