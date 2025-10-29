@@ -1,7 +1,7 @@
 package com.misomota.wishlist.model;
 
 public class GiftWish {
-    private String giftWish;
+    private String giftWishName;
     private int id;
 
     public GiftWish() {
@@ -9,16 +9,16 @@ public class GiftWish {
     }
 
     public GiftWish(String giftWish, int id) {
-        this.giftWish = giftWish;
+        this.giftWishName = giftWish;
         this.id = id;
     }
 
-    public String getGiftWish() {
-        return giftWish;
+    public String getGiftWishName() {
+        return giftWishName;
     }
 
-    public void setGiftWish(String giftWish) {
-        this.giftWish = giftWish;
+    public void setGiftWishName(String giftWish) {
+        this.giftWishName = giftWish;
     }
 
     public int getGiftId() {

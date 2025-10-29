@@ -90,13 +90,13 @@ public class WishListRepository {
 
         jdbcTemplate.update(con -> {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, giftWish.getGiftWish());
+            ps.setString(1, giftWish.getGiftWishName());
             ps.setInt(2, wishListId);
             return ps;
         }, keyHolder);
 
         int newId = keyHolder.getKey() != null ? keyHolder.getKey().intValue() : -1;
-        return new GiftWish(giftWish.getGiftWish(), newId);
+        return new GiftWish(giftWish.getGiftWishName(), newId);
     }
 
     public void deleteGiftWish(int wishId) {
