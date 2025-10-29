@@ -47,10 +47,4 @@ public class WishListService {
     public WishList findWishListByid(int id) {
         return wishListRepository.findWishListById(id);
     }
-
-    /**
-     * Tilføj et gaveønske til en ønskeliste.
-     * @param giftWish selve ønsket (navn)
-     * @param wishListId id'et på ønskelisten det hører til
-     */
 }
