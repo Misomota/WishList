@@ -86,9 +86,9 @@ public class WishListRepository {
         jdbcTemplate.update(sql, wishList.getWishListName(), wishList.getId());
     }
 
-    public List<GiftWish> getGiftWish() {
-        String sql = "SELECT WishID, WishName FROM GiftWish";
-        return jdbcTemplate.query(sql, giftWishRowMapper);
+    public List<GiftWish> getGiftWish(int wishListId) {
+        String sql = "SELECT WishID, WishName FROM GiftWish WHERE WishListID = ?";
+        return jdbcTemplate.query(sql, giftWishRowMapper, wishListId);
     }
 
     public GiftWish addGiftWish(GiftWish giftWish, int wishListId) {
