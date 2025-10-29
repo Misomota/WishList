@@ -4,10 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a7b0f64-859a-47bc-9840-651b21d19781" name="Changes" comment="rettelser i controller">
+    <list default="true" id="4a7b0f64-859a-47bc-9840-651b21d19781" name="Changes" comment="tilføjet &lt;a th:href=&quot;@{/Gaveæsken/addWishList}&quot;&gt;Tilføj ønskeliste&lt;/a&gt; til html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/controller/WishListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/controller/WishListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/model/GiftWish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/model/GiftWish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/model/WishList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/model/WishList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/repository/WishListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/repository/WishListRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/service/WishListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/service/WishListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addWish.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addWishList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addWishList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/showGiftWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/showGiftWish.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/showWishList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/showWishList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/controller/WishListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/controller/WishListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/model/GiftWish.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/model/GiftWish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/model/WishList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/model/WishList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/repository/WishListRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/repository/WishListRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/service/WishListService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/service/WishListService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addWish.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addWishList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addWishList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,37 +77,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.WishlistApplication.executor": "Run",
-    "git-widget-placeholder": "SaveGiftWish",
-    "last_opened_file_path": "/Users/mie/Library/CloudStorage/OneDrive-Personal/DatamatikerPortfolio/wishlist",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.ChangelistConflict",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.WishlistApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;SaveGiftWish&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mie/Library/CloudStorage/OneDrive-Personal/DatamatikerPortfolio/wishlist&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.ChangelistConflict&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="WishlistApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
@@ -130,6 +144,7 @@
       <workItem from="1761312170370" duration="189000" />
       <workItem from="1761469397258" duration="1128000" />
       <workItem from="1761551272283" duration="10610000" />
+      <workItem from="1761729269188" duration="4461000" />
     </task>
     <task id="LOCAL-00001" summary="Unversioned Files">
       <option name="closed" value="true" />
@@ -219,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761470324816</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="tilføjet &lt;a th:href=&quot;@{/Gaveæsken/addWishList}&quot;&gt;Tilføj ønskeliste&lt;/a&gt; til html">
+      <option name="closed" value="true" />
+      <created>1761662571235</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1761662571235</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +270,7 @@
     <MESSAGE value="tilføjet html addWishList og addWish + rettelser i controller" />
     <MESSAGE value="tilføjet addWishList.html" />
     <MESSAGE value="tilføjet saveWishList" />
-    <option name="LAST_COMMIT_MESSAGE" value="tilføjet saveWishList" />
+    <MESSAGE value="tilføjet &lt;a th:href=&quot;@{/Gaveæsken/addWishList}&quot;&gt;Tilføj ønskeliste&lt;/a&gt; til html" />
+    <option name="LAST_COMMIT_MESSAGE" value="tilføjet &lt;a th:href=&quot;@{/Gaveæsken/addWishList}&quot;&gt;Tilføj ønskeliste&lt;/a&gt; til html" />
   </component>
 </project>

@@ -16,17 +16,17 @@
     <tr th:each="showWish : ${wishList}">
         <td th:text="${showWish.wishListName}">WishList Name</td>
         <td>
-            <a th:href="@{/Gaveæsken/editWishList(id=${showWish.id})}">Edit</a>
-            <form th:action="@{/Gaveæsken/delete/wishList}" method="post" style="display:inline;">
+            <a th:href="@{/Gaveaesken/editWishList(id=${showWish.id})}">Edit</a>
+            <form th:action="@{/Gaveaesken/delete/wishList}" method="post" style="display:inline;">
                 <input type="hidden" th:name="id" th:value="${showWish.id}" />
                 <button type="submit">Delete</button>
             </form>
-            <a th:href="@{/Gaveæsken/MyWishes}">vis ønskelisten</a>
+            <a th:href="@{/Gaveaesken/MyWishes(wishListId=${showWish.id})}">Vis ønskelisten</a>
+
         </td>
     </tr>
     </tbody>
 </table>
-<a th:href="@{/Gaveæsken/addWishList}">Tilføj ønskeliste</a>
-
+<a th:href="@{/Gaveaesken/addWishList}">Tilføj ønskeliste</a>
 </body>
 </html>
