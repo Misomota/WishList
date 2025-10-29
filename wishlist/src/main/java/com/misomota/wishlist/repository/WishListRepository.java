@@ -52,8 +52,15 @@ public class WishListRepository {
 
     public WishList findWishListById(int id) {
         String sql = "SELECT WishListID, WishListName FROM WishList WHERE WishListID = ?";
-        return jdbcTemplate.queryForObject(sql, wishListRowMapper, id);
+        WishList wishList = jdbcTemplate.queryForObject(sql, wishListRowMapper, id);
+
+        String giftSql = "SELECT WishID, WishName FROM GiftWish WHERE WishListID = ?";
+        List<GiftWish> gifts = jdbcTemplate.query(giftSql, new Object[]{id}, giftWishRowMapper);
+
+        wishList.setGiftWishes(gifts);
+        return wishList;
     }
+
 
     public WishList addWishList(WishList wishList) {
         String sql = "INSERT INTO WishList (WishListName) VALUES (?)";

@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a7b0f64-859a-47bc-9840-651b21d19781" name="Changes" comment="tilføjet &lt;a th:href=&quot;@{/Gaveæsken/addWishList}&quot;&gt;Tilføj ønskeliste&lt;/a&gt; til html">
+    <list default="true" id="4a7b0f64-859a-47bc-9840-651b21d19781" name="Changes" comment="gemme ønske vises nu på html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/controller/WishListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/controller/WishListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/model/GiftWish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/model/GiftWish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/model/WishList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/model/WishList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/repository/WishListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/repository/WishListRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/service/WishListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/misomota/wishlist/service/WishListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addWish.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addWishList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addWishList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/showGiftWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/showGiftWish.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/showWishList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/showWishList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/controller/WishListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/controller/WishListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/model/GiftWish.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/model/GiftWish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/model/WishList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/model/WishList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/repository/WishListRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/repository/WishListRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/service/WishListService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/misomota/wishlist/service/WishListService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/addWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addWish.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/addWishList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addWishList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +130,7 @@
       <workItem from="1761312170370" duration="189000" />
       <workItem from="1761469397258" duration="1128000" />
       <workItem from="1761551272283" duration="10610000" />
-      <workItem from="1761729269188" duration="4461000" />
+      <workItem from="1761729269188" duration="6439000" />
     </task>
     <task id="LOCAL-00001" summary="Unversioned Files">
       <option name="closed" value="true" />
@@ -242,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761662571235</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="gemme ønske vises nu på html">
+      <option name="closed" value="true" />
+      <created>1761734070141</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1761734070141</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +265,7 @@
     <MESSAGE value="tilføjet addWishList.html" />
     <MESSAGE value="tilføjet saveWishList" />
     <MESSAGE value="tilføjet &lt;a th:href=&quot;@{/Gaveæsken/addWishList}&quot;&gt;Tilføj ønskeliste&lt;/a&gt; til html" />
-    <option name="LAST_COMMIT_MESSAGE" value="tilføjet &lt;a th:href=&quot;@{/Gaveæsken/addWishList}&quot;&gt;Tilføj ønskeliste&lt;/a&gt; til html" />
+    <MESSAGE value="gemme ønske vises nu på html" />
+    <option name="LAST_COMMIT_MESSAGE" value="gemme ønske vises nu på html" />
   </component>
 </project>

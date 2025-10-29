@@ -23,7 +23,7 @@ public class WishListService {
     public List<GiftWish> showGiftWish(int wishListId) {
         WishList wishList = wishListRepository.findWishListById(wishListId);
         if (wishList != null) {
-            return wishList.getGiftWishes(); // antager WishList har en liste af GiftWish
+            return wishList.getGiftWishes();
         }
         return new ArrayList<>();
     }
