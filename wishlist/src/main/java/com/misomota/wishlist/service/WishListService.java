@@ -5,6 +5,7 @@ import com.misomota.wishlist.model.WishList;
 import com.misomota.wishlist.repository.WishListRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,8 +20,12 @@ public class WishListService {
         return wishListRepository.getWishList();
     }
 
-    public List<GiftWish> showGiftWish() {
-        return wishListRepository.getGiftWish();
+    public List<GiftWish> showGiftWish(int wishListId) {
+        WishList wishList = wishListRepository.findWishListById(wishListId);
+        if (wishList != null) {
+            return wishList.getGiftWishes(); // antager WishList har en liste af GiftWish
+        }
+        return new ArrayList<>();
     }
 
     public WishList addWishList(WishList wishlist) {

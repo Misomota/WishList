@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/Gaveæsken")
+@RequestMapping("/Gaveaesken")
 public class WishListController {
     private final WishListService wishListService;
 
@@ -26,9 +26,10 @@ public class WishListController {
     }
 
     @GetMapping("/MyWishes")
-    public String showGiftWishList(Model model) {
-        List<GiftWish> listOfGiftWish = wishListService.showGiftWish();
+    public String showGiftWishList(@RequestParam("wishListId") int wishListId, Model model) {
+        List<GiftWish> listOfGiftWish = wishListService.showGiftWish(wishListId);
         model.addAttribute("giftWish", listOfGiftWish);
+        model.addAttribute("wishListId",wishListId);
         return "showGiftWish";
     }
 
@@ -41,23 +42,23 @@ public class WishListController {
     @PostMapping("/addWishList")
     public String saveWishList(@ModelAttribute("WishList") WishList wishList) {
         wishListService.addWishList(wishList);
-        return "redirect:/Gaveæsken/MyWishList";
+        return "redirect:/Gaveaesken/MyWishList";
     }
 
     @GetMapping("/addWish")
     public String addWish(@RequestParam("wishListId") int wishListId, Model model) {
         GiftWish giftWish = new GiftWish();
         giftWish.setGiftId(0);
-        model.addAttribute("GiftWish", giftWish);
+        model.addAttribute("giftWish", giftWish);
         model.addAttribute("wishListId", wishListId);
         return "addWish";
     }
 
     @PostMapping("/addWish")
-    public String saveWish(@ModelAttribute("GiftWish") GiftWish giftWish,
+    public String saveWish(@ModelAttribute("giftWish") GiftWish giftWish,
                            @RequestParam("wishListId") int wishListId) {
         wishListService.addWish(giftWish, wishListId);
-        return "redirect:/Gaveæsken/MyWishes";
+        return "redirect:/Gaveaesken/MyWishes?wishListId=" + wishListId;
     }
 
     @PostMapping("/delete/wishList")
@@ -79,7 +80,7 @@ public class WishListController {
             model.addAttribute("WishList", wishList);
             return "editWishList";
         } else {
-            return "redirect:/Gaveæsken/MyWishList";
+            return "redirect:/Gaveaesken/MyWishList";
         }
     }
 

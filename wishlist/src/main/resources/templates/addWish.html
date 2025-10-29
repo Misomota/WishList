@@ -5,12 +5,16 @@
     <title>Add wish to wishlist</title>
 </head>
 <body>
-<form th:action="@{/Gaveæsken/addWish}" th:object="${GiftWish}" method="post">
+<form th:action="@{/Gaveaesken/addWish}" th:object="${giftWish}" method="post">
 
+    <input type="hidden" name="wishListId" th:value="${wishListId}" />
 
     <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" th:field="*{giftWish}" placeholder="Enter your wish" required/>
+        <label for="giftWishName">Wish name </label>
+        <input type="text"
+               id="giftWishName"
+               th:field="*{giftWishName}"
+               placeholder="Enter your wish" required/>
 
     </div>
 
