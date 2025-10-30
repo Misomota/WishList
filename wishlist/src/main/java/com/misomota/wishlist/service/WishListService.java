@@ -21,11 +21,7 @@ public class WishListService {
     }
 
     public List<GiftWish> showGiftWish(int wishListId) {
-        WishList wishList = wishListRepository.findWishListById(wishListId);
-        if (wishList != null) {
-            return wishList.getGiftWishes();
-        }
-        return new ArrayList<>();
+       return wishListRepository.getGiftWish(wishListId);
     }
 
     public WishList addWishList(WishList wishlist) {
@@ -49,7 +45,15 @@ public class WishListService {
 
     }
 
-    public WishList findWishListByid(int id) {
+    public void updateGiftWish(GiftWish giftWish) {
+        wishListRepository.updateGiftWish(giftWish);
+    }
+
+    public WishList findWishListById(int id) {
         return wishListRepository.findWishListById(id);
+    }
+
+    public GiftWish findGiftWishById(int wishId) {
+        return wishListRepository.findGiftWishById(wishId);
     }
 }

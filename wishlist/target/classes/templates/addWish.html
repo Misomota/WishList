@@ -2,27 +2,25 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add wish to wishlist</title>
+    <title>Tilføj ønske</title>
 </head>
 <body>
-<form th:action="@{/Gaveaesken/addWish}" th:object="${giftWish}" method="post">
 
+<h2>Tilføj nyt ønske</h2>
+
+<form th:action="@{/Gaveaesken/addWish}" th:object="${giftWish}" method="post">
     <input type="hidden" name="wishListId" th:value="${wishListId}" />
 
     <div>
-        <label for="giftWishName">Wish name </label>
-        <input type="text"
-               id="giftWishName"
-               th:field="*{giftWishName}"
-               placeholder="Enter your wish" required/>
-
+        <label for="giftWishName">Ønskets navn:</label>
+        <input type="text" id="giftWishName" th:field="*{giftWishName}" placeholder="Skriv dit ønske" required />
     </div>
 
-    <div class="buttonRow">
-        <button type="submit" id="submitButton">Ok</button>
-        <a href="/Gaveæsken" id="cancelButton">Cancel</a>
-    </div>
+    <br>
 
+    <button type="submit">Tilføj</button>
+    <a th:href="@{/Gaveaesken/MyWishes(wishListId=${wishListId})}">Annullér</a>
 </form>
+
 </body>
 </html>
