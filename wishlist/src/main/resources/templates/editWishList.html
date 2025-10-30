@@ -7,12 +7,12 @@
 <body>
 <h2>Rediger ønskeliste</h2>
 
-<form th:action="@{/Gaveaesken/update}" th:object="${WishList}" method="post">
+<form th:action="@{/Gaveaesken/update}" th:object="${wishList}" method="post">
     <input type="hidden" th:field="*{id}" />
 
     <div>
         <label for="name">Navn</label>
-        <input type="text" id="name" th:field="*{wishListName}" required />
+        <input type="text" id="name" th:field="*{nameOfWishList}" required />
     </div>
 
     <button type="submit">Gem ændringer</button>

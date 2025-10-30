@@ -14,7 +14,7 @@
     </thead>
     <tbody>
     <tr th:each="showWish : ${wishList}">
-        <td th:text="${showWish.wishListName}">WishList Name</td>
+        <td th:text="${showWish.nameOfWishList}">WishList Name</td>
         <td>
             <a th:href="@{/Gaveaesken/editWishList(id=${showWish.id})}">Edit</a>
             <form th:action="@{/Gaveaesken/delete/wishList}" method="post" style="display:inline;">
