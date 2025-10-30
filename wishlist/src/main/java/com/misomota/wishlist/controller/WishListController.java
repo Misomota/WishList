@@ -35,7 +35,7 @@ public class WishListController {
 
     @GetMapping("/addWishList")
     public String addWishList(Model model) {
-        model.addAttribute("WishList", new WishList());
+        model.addAttribute("wishList", new WishList());
         return "addWishList";
     }
 
@@ -76,9 +76,9 @@ public class WishListController {
 
     @GetMapping("/editWishList")
     public String editWishList(@RequestParam("id") int wishListId, Model model) {
-        WishList wishList = wishListService.findWishListById(wishListId);
-        if (wishList != null) {
-            model.addAttribute("WishList", wishList);
+        WishList WishList = wishListService.findWishListById(wishListId);
+        if (WishList != null) {
+            model.addAttribute("wishList", WishList);
             return "editWishList";
         } else {
             return "redirect:/Gaveaesken/MyWishList";

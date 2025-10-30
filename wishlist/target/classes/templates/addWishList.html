@@ -6,18 +6,18 @@
 </head>
 <body>
 
-<form th:action="@{/Gaveaesken/addWishList}" th:object="${WishList}" method="post">
+<form th:action="@{/Gaveaesken/addWishList}" th:object="${wishList}" method="post">
 
 
 <div>
     <label for="name">Name</label>
-    <input type="text" id="name" th:field="*{wishListName}" placeholder="Enter wishlist name" required/>
+    <input type="text" id="name" th:field="*{nameOfWishList}" placeholder="Enter wishlist name" required/>
 
 </div>
 
     <div class="buttonRow">
         <button type="submit" id="submitButton">Ok</button>
-        <a href="/Gaveæsken" id="cancelButton">Cancel</a>
+        <a th:href="@{/Gaveaesken}" id="cancelButton">Cancel</a>
     </div>
 
 </form>
