@@ -64,18 +64,19 @@ public class WishListController {
     @PostMapping("/delete/wishList")
     public String deleteWishList(@RequestParam("id") int wishListId) {
         wishListService.deleteWishList(wishListId);
-        return "redirect:/showWishList";
+        return "redirect:/Gaveaesken/MyWishList";
     }
 
     @PostMapping("/delete/giftWish")
-    public String deletegiftWish(@RequestParam("id") int giftId) {
+    public String deleteGiftWish(@RequestParam("id") int giftId,
+                                 @RequestParam("wishListId") int wishListId) {
         wishListService.deleteGiftWish(giftId);
-        return "redirect:/showWishList";
+        return "redirect:/Gaveaesken/MyWishes?wishListId=" + wishListId;
     }
 
     @GetMapping("/editWishList")
     public String editWishList(@RequestParam("id") int wishListId, Model model) {
-        WishList wishList = wishListService.findWishListByid(wishListId);
+        WishList wishList = wishListService.findWishListById(wishListId);
         if (wishList != null) {
             model.addAttribute("WishList", wishList);
             return "editWishList";
@@ -84,9 +85,26 @@ public class WishListController {
         }
     }
 
+    @GetMapping("/editGiftWish")
+    public String editWish(@RequestParam("id") int wishId,
+                           @RequestParam("wishListId") int wishListId,
+                           Model model) {
+        GiftWish wish = wishListService.findGiftWishById(wishId);
+        model.addAttribute("giftWish", wish);
+        model.addAttribute("wishListId", wishListId);
+        return "editWish";
+    }
+
     @PostMapping("/update")
-    public String updateWishList(@ModelAttribute("wishList") WishList wishlist) {
+    public String updateWishList(@ModelAttribute("WishList") WishList wishlist) {
         wishListService.updateWishList(wishlist);
-        return "redirect:/showWishList";
+        return "redirect:/Gaveaesken/MyWishList";
+    }
+
+    @PostMapping("/updateGiftWish")
+    public String updateWish(@ModelAttribute("giftWish") GiftWish giftWish,
+                             @RequestParam("wishListId") int wishListId) {
+        wishListService.updateGiftWish(giftWish);
+        return "redirect:/Gaveaesken/MyWishes?wishListId=" + wishListId;
     }
 }

@@ -1,16 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ønsker i listen</title>
+</head>
+<body>
+
+<h2 th:text="'Ønsker i: ' + ${wishListId}"></h2>
+
 <table>
     <thead>
     <tr>
         <th>Ønske</th>
-        <th>Handling</th>
+        <th>Handlinger</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="wish : ${giftWish}">
         <td th:text="${wish.giftWishName}">Wish Name</td>
         <td>
+            <a th:href="@{/Gaveaesken/editGiftWish(id=${wish.giftId}, wishListId=${wishListId})}">Rediger</a>
+
             <form th:action="@{/Gaveaesken/delete/giftWish}" method="post" style="display:inline;">
                 <input type="hidden" name="id" th:value="${wish.giftId}" />
+                <input type="hidden" name="wishListId" th:value="${wishListId}" />
                 <button type="submit">Slet</button>
             </form>
         </td>
@@ -18,4 +31,10 @@
     </tbody>
 </table>
 
-<a th:href="@{/Gaveaesken/addWish(wishListId=${wishListId})}">Tilføj nyt ønske</a>
+<br>
+
+<a th:href="@{/Gaveaesken/addWish(wishListId=${wishListId})}">Tilføj nyt ønske</a> |
+<a th:href="@{/Gaveaesken/MyWishList}">Tilbage til mine ønskelister</a>
+
+</body>
+</html>

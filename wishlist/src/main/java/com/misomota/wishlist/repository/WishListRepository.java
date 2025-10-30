@@ -110,4 +110,14 @@ public class WishListRepository {
         String sql = "DELETE FROM GiftWish WHERE WishID = ?";
         jdbcTemplate.update(sql, wishId);
     }
+
+    public void updateGiftWish(GiftWish giftWish) {
+        String sql = "UPDATE GiftWish SET WishName = ? WHERE WishID = ?";
+        jdbcTemplate.update(sql, giftWish.getGiftWishName(), giftWish.getGiftId());
+    }
+
+    public GiftWish findGiftWishById(int id) {
+        String sql = "SELECT WishID, WishName FROM GiftWish WHERE WishID = ?";
+        return jdbcTemplate.queryForObject(sql, giftWishRowMapper, id);
+    }
 }
