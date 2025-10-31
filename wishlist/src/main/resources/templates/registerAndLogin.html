@@ -12,12 +12,11 @@
             --bg-color-alt: #AE96D4;
             --main-color: #482960;
 
-            /* Center the card */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* full screen height */
-            background-color: #f2f2f2; /* optional, just for nicer contrast */
+            height: 100vh; 
+            background-color: #f2f2f2; 
         }
 
         .switch {
@@ -188,7 +187,7 @@
             <span class="card-side"></span>
 
             <div class="flip-card__inner">
-                <!-- LOGIN SIDE -->
+                <!-- login -->
                 <div class="flip-card__front">
                     <div class="title">Log in</div>
                     <form th:action="@{/User/Login}" th:object="${user}" method="post" class="flip-card__form">
@@ -198,7 +197,7 @@
                     </form>
                 </div>
 
-                <!-- SIGNUP SIDE -->
+                <!-- register -->
                 <div class="flip-card__back">
                     <div class="title">Sign up</div>
                     <form th:action="@{/User/Register}" th:object="${user}" method="post" class="flip-card__form">
