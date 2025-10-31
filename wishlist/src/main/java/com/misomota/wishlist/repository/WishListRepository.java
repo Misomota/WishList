@@ -68,12 +68,12 @@ public class WishListRepository {
 
         jdbcTemplate.update(con -> {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, wishList.getNameOfWishList());
+            ps.setString(1, wishList.getWishListName());
             return ps;
         }, keyHolder);
 
         int newId = keyHolder.getKey() != null ? keyHolder.getKey().intValue() : -1;
-        return new WishList(wishList.getNameOfWishList(), newId);
+        return new WishList(wishList.getWishListName(), newId);
     }
 
     public void deleteWishList(int wishListId) {
@@ -83,7 +83,7 @@ public class WishListRepository {
 
     public void updateWishList(WishList wishList) {
         String sql = "UPDATE WishList SET WishListName = ? WHERE WishListID = ?";
-        jdbcTemplate.update(sql, wishList.getNameOfWishList(), wishList.getId());
+        jdbcTemplate.update(sql, wishList.getWishListName(), wishList.getId());
     }
 
     public List<GiftWish> getGiftWish(int wishListId) {

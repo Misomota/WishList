@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rediger ønske</title>
+</head>
+<body>
+<h2>Rediger ønske</h2>
+
+<form th:action="@{/Gaveaesken/updateGiftWish(wishListId=${wishListId})}" th:object="${giftWish}" method="post">
+    <input type="hidden" th:field="*{giftId}" />
+    <div>
+        <label for="giftWishName">Ønskets navn</label>
+        <input type="text" id="giftWishName" th:field="*{giftWishName}" required />
+    </div>
+
+    <button type="submit">Gem ændringer</button>
+    <a th:href="@{/Gaveaesken/MyWishes(wishListId=${wishListId})}">Annullér</a>
+</form>
+
+</body>
+</html>

@@ -3,7 +3,7 @@ package com.misomota.wishlist.model;
 import java.util.List;
 
 public class WishList {
-    private String nameOfWishList;
+    private String wishListName;
     private int id;
     private List<GiftWish> giftWishes;
 
@@ -12,12 +12,12 @@ public class WishList {
     }
 
     public WishList(String wishListName, int id) {
-        this.nameOfWishList = wishListName;
+        this.wishListName = wishListName;
         this.id = id;
     }
 
-    public String getNameOfWishList() {
-        return nameOfWishList;
+    public String getWishListName() {
+        return wishListName;
     }
 
     public int getId() {
@@ -29,7 +29,7 @@ public class WishList {
     }
 
     public void setWishListName(String wishListName) {
-        this.nameOfWishList = wishListName;
+        this.wishListName = wishListName;
     }
 
     public List<GiftWish> getGiftWishes() {
