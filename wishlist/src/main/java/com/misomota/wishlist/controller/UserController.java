@@ -23,7 +23,7 @@ public class UserController {
     @GetMapping("/Register")
     public String showRegisteredUser(Model model) {
         model.addAttribute("user", new User());
-        return "register";
+        return "registerAndLogin";
     }
 
     @PostMapping("/Register")
@@ -36,7 +36,7 @@ public class UserController {
     @GetMapping("/Login")
     public String showLoginPage(Model model) {
         model.addAttribute("user", new User());
-        return "login";
+        return "registerAndLogin";
     }
 
     @PostMapping("/Login")
@@ -47,7 +47,7 @@ public class UserController {
             return "showWishList";
         } else {
             model.addAttribute("error", "Invalid username or password");
-            return "login";
+            return "registerAndLogin";
         }
     }
 }
