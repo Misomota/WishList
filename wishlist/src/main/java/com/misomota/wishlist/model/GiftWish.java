@@ -2,15 +2,15 @@ package com.misomota.wishlist.model;
 
 public class GiftWish {
     private String giftWishName;
-    private int id;
+    private int giftId;
 
     public GiftWish() {
 
     }
 
-    public GiftWish(String giftWish, int id) {
+    public GiftWish(String giftWish, int giftId) {
         this.giftWishName = giftWish;
-        this.id = id;
+        this.giftId = giftId;
     }
 
     public String getGiftWishName() {
@@ -22,10 +22,10 @@ public class GiftWish {
     }
 
     public int getGiftId() {
-        return id;
+        return giftId;
     }
 
     public void setGiftId(int id) {
-        this.id = id;
+        this.giftId = id;
     }
 }

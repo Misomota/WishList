@@ -40,7 +40,7 @@ public class WishListController {
     }
 
     @PostMapping("/addWishList")
-    public String saveWishList(@ModelAttribute("WishList") WishList wishList) {
+    public String saveWishList(@ModelAttribute("wishList") WishList wishList) {
         wishListService.addWishList(wishList);
         return "redirect:/Gaveaesken/MyWishList";
     }
@@ -76,9 +76,9 @@ public class WishListController {
 
     @GetMapping("/editWishList")
     public String editWishList(@RequestParam("id") int wishListId, Model model) {
-        WishList WishList = wishListService.findWishListById(wishListId);
-        if (WishList != null) {
-            model.addAttribute("wishList", WishList);
+        WishList wishList = wishListService.findWishListById(wishListId);
+        if (wishList != null) {
+            model.addAttribute("wishList", wishList);
             return "editWishList";
         } else {
             return "redirect:/Gaveaesken/MyWishList";
@@ -92,11 +92,11 @@ public class WishListController {
         GiftWish wish = wishListService.findGiftWishById(wishId);
         model.addAttribute("giftWish", wish);
         model.addAttribute("wishListId", wishListId);
-        return "editWish";
+        return "editGiftWish";
     }
 
     @PostMapping("/update")
-    public String updateWishList(@ModelAttribute("WishList") WishList wishlist) {
+    public String updateWishList(@ModelAttribute("wishList") WishList wishlist) {
         wishListService.updateWishList(wishlist);
         return "redirect:/Gaveaesken/MyWishList";
     }
