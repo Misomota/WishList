@@ -1,0 +1,61 @@
+
+.btn {
+    background-color: transparent;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.btn::after {
+    position: absolute;
+    top: -130%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000000;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    transition: .2s linear;
+    transition-delay: .2s;
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+}
+
+
+.edit::after {
+    content: 'rediger ønske';
+}
+
+.delete::after {
+    content: 'slet ønske';
+}
+
+
+.icon {
+    transform: scale(1.2);
+    transition: .2s linear;
+}
+
+
+.btn:hover > .icon {
+    transform: scale(1.5);
+}
+
+.btn:hover::after {
+    visibility: visible;
+    opacity: 1;
+    top: -160%;
+}
+
+
+.edit:hover > .icon g {
+    stroke: #d6a2ad;
+}
+
+.delete:hover > .icon path {
+    fill: #d6a2ad;
+}
