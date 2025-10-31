@@ -1,8 +1,10 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Login / Sign Up</title>
+    <link rel="icon" href="/images/Gifty.PNG" type="image/png">
+    <link rel="shortcut icon" href="/images/Gifty.PNG" type="image/png">
     <style>
         .wrapper {
             --input-focus: #D6A2AD;
@@ -11,12 +13,11 @@
             --bg-color: #fff;
             --bg-color-alt: #AE96D4;
             --main-color: #482960;
-
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh; 
-            background-color: #f2f2f2; 
+            height: 50vh;
+            width: 150%;
+
         }
 
         .switch {
@@ -176,9 +177,26 @@
             color: var(--font-color);
             cursor: pointer;
         }
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+        img {
+            position: relative;
+            top: 250px;
+            left: -20px;
+        }
     </style>
 </head>
 <body>
+<h1>Velkommen til Gaveæsken!</h1>
+<img src="/images/GiftyHappy.PNG" alt="gifty" style="width:500px;height:500px;">
 <div class="wrapper">
     <div class="card-switch">
         <label class="switch">

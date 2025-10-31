@@ -3,26 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="icon" href="/images/Gifty.PNG" type="image/png">
+    <link rel="shortcut icon" href="/images/Gifty.PNG" type="image/png">
 </head>
 <body>
 <table>
-    <thead>
-    <tr>
-        <th>Navn</th>
-        <th>Handling</th>
-    </tr>
-    </thead>
     <tbody>
     <tr th:each="showWish : ${wishList}">
-        <td th:text="${showWish.wishListName}">WishList Name</td>
+        <td>
+            <a th:href="@{/Gaveaesken/MyWishes(wishListId=${showWish.id})}" th:text="${showWish.wishListName}">
+        </a>
+        </td>
         <td>
             <a th:href="@{/Gaveaesken/editWishList(id=${showWish.id})}">Edit</a>
             <form th:action="@{/Gaveaesken/delete/wishList}" method="post" style="display:inline;">
                 <input type="hidden" th:name="id" th:value="${showWish.id}" />
                 <button type="submit">Delete</button>
             </form>
-            <a th:href="@{/Gaveaesken/MyWishes(wishListId=${showWish.id})}">Vis ønskelisten</a>
-
         </td>
     </tr>
     </tbody>
