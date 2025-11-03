@@ -5,18 +5,13 @@
     <title>Ønsker i listen</title>
 
     <link rel="stylesheet" href="/deleteAndEditButton.css">
+    <link rel="stylesheet" href="/button.css">
 </head>
 <body>
 
 <h2 th:text="'Ønsker i: ' + ${wishListId}"></h2>
 
 <table>
-    <thead>
-    <tr>
-        <th>Ønske</th>
-        <th>Handlinger</th>
-    </tr>
-    </thead>
     <tbody>
     <tr th:each="wish : ${giftWish}">
         <td th:text="${wish.giftWishName}">Wish Name</td>
@@ -55,9 +50,9 @@
 </table>
 
 <br>
-
-<a th:href="@{/Gaveaesken/addWish(wishListId=${wishListId})}">Tilføj nyt ønske</a> |
-<a th:href="@{/Gaveaesken/MyWishList}">Tilbage til mine ønskelister</a>
-
+<div>
+<a th:href="@{/Gaveaesken/addWish(wishListId=${wishListId})}" class="btn">Tilføj nyt ønske</a>
+<a th:href="@{/Gaveaesken/MyWishList}" class="btn">Tilbage til mine ønskelister</a>
+</div>
 </body>
 </html>

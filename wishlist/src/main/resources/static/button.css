@@ -1,4 +1,4 @@
-button {
+.btn {
     padding: 12px 35px;
     border: 3px solid #482960;
     outline: none;
@@ -8,13 +8,50 @@ button {
     font-size: 17px;
     font-weight: 500;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
     transition: all 0.25s ease-out;
+    margin: 40px auto;
+
 }
 
-button:hover {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h2 {
+    text-align: center;
+}
+
+.buttonRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+button.container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.btn:hover {
     transform: translateY(-3px);
 }
 
-button-span {
+.btn span {
     color: #aaa;
 }

@@ -5,19 +5,26 @@
     <title>Rediger ønske</title>
     <link rel="icon" href="/images/favicon.ico" type="image/png">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="/button.css">
+    <link rel="stylesheet" href="/headlineAndInput.css">
 </head>
 <body>
 <h2>Rediger ønske</h2>
 
 <form th:action="@{/Gaveaesken/updateGiftWish(wishListId=${wishListId})}" th:object="${giftWish}" method="post">
     <input type="hidden" th:field="*{giftId}" />
+
     <div>
-        <label for="giftWishName">Ønskets navn</label>
-        <input type="text" id="giftWishName" th:field="*{giftWishName}" required />
+        <div class="group">
+            <input th:field="*{giftWishName}" placeholder="Navn på ønske" type="search" class="input" required>
+        </div>
+
     </div>
 
-    <button type="submit">Gem ændringer</button>
-    <a th:href="@{/Gaveaesken/MyWishes(wishListId=${wishListId})}">Annullér</a>
+    <div class="buttonRow">
+        <button type="submit" id="submitButton" class ="btn">Gem ændringer</button>
+        <a th:href="@{/Gaveaesken/MyWishes(wishListId=${wishListId})}" class ="btn">Tilbage</a>
+    </div>
 </form>
 
 </body>

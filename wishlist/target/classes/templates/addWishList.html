@@ -5,21 +5,25 @@
     <title>Add a new wishList</title>
     <link rel="icon" href="/images/favicon.ico" type="image/png">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="/headlineAndInput.css">
+    <link rel="stylesheet" href="/button.css">
 </head>
 <body>
+<h2>Tilføj ny ønskeliste</h2>
 
 <form th:action="@{/Gaveaesken/addWishList}" th:object="${wishList}" method="post">
 
 
 <div>
-    <label for="name">Name</label>
-    <input type="text" id="name" th:field="*{wishListName}" placeholder="Enter wishlist name" required/>
+    <div class="group">
+        <input th:field="*{wishListName}" placeholder="Navn på ønskeliste" type="search" class="input" required>
+    </div>
 
 </div>
 
     <div class="buttonRow">
-        <button type="submit" id="submitButton">Ok</button>
-        <a th:href="@{/Gaveaesken/MyWishList}" id="cancelButton">Cancel</a>
+        <button type="submit" id="submitButton" class ="btn">Tilføj</button>
+        <a th:href="@{/Gaveaesken/MyWishList}" class ="btn">Tilbage</a>
     </div>
 
 </form>

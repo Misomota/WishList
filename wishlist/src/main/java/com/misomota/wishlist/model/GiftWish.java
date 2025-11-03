@@ -8,8 +8,8 @@ public class GiftWish {
 
     }
 
-    public GiftWish(String giftWish, int giftId) {
-        this.giftWishName = giftWish;
+    public GiftWish(String giftWishName, int giftId) {
+        this.giftWishName = giftWishName;
         this.giftId = giftId;
     }
 
@@ -17,8 +17,8 @@ public class GiftWish {
         return giftWishName;
     }
 
-    public void setGiftWishName(String giftWish) {
-        this.giftWishName = giftWish;
+    public void setGiftWishName(String giftWishName) {
+        this.giftWishName = giftWishName;
     }
 
     public int getGiftId() {
