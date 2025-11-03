@@ -1,0 +1,20 @@
+button {
+    padding: 12px 35px;
+    border: 3px solid #482960;
+    outline: none;
+    background-color: #482960;
+    color: #eee;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button-span {
+    color: #aaa;
+}
