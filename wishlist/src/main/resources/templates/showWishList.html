@@ -48,6 +48,10 @@
     </tr>
     </tbody>
 </table>
+<div th:if="${#lists.isEmpty(wishList)}" style="text-align:center; margin-top:20px;">
+    <img src="/images/GiftySleep.PNG" alt="Ingen ønskelister endnu" width="150" height="150">
+    <p>Du har endnu ikke oprettet nogen ønskelister</p>
+</div>
 
 <a th:href="@{/Gaveaesken/addWishList}">Tilføj ønskeliste</a>
 
