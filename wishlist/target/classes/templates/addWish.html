@@ -5,6 +5,8 @@
     <title>Tilføj ønske</title>
     <link rel="icon" href="/images/favicon.ico" type="image/png">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="/button.css">
+    <link rel="stylesheet" href="/headlineAndInput.css">
 </head>
 <body>
 
@@ -14,14 +16,19 @@
     <input type="hidden" name="wishListId" th:value="${wishListId}" />
 
     <div>
-        <label for="giftWishName">Ønskets navn:</label>
-        <input type="text" id="giftWishName" th:field="*{giftWishName}" placeholder="Skriv dit ønske" required />
+        <div class="group">
+            <input th:field="*{giftWishName}" placeholder="Navn på ønske" type="search" class="input" required>
+        </div>
+
     </div>
 
     <br>
 
-    <button type="submit">Tilføj</button>
-    <a th:href="@{/Gaveaesken/MyWishes(wishListId=${wishListId})}">Annullér</a>
+    <div class="buttonRow">
+        <button type="submit" id="submitButton" class ="btn">Tilføj</button>
+        <a th:href="@{/Gaveaesken/MyWishes(wishListId=${wishListId})}" class ="btn">Tilbage</a>
+    </div>
+
 </form>
 
 </body>

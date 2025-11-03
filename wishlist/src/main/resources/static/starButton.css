@@ -1,4 +1,4 @@
-button {
+.star-button {
     position: relative;
     padding: 12px 35px;
     background: #482960;
@@ -10,6 +10,27 @@ button {
     box-shadow: 0 0 0 #482960;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 40px auto;
+    display: flex;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+a {
+    color: #fff;
+    background: #482960;
 }
 
 .star-1 {
@@ -78,13 +99,13 @@ button {
     transition: all 0.8s ease;
 }
 
-button:hover {
+.star-button:hover {
     background: #482960;
     color: #FFFFFF;
     box-shadow: 0 0 25px #D6A2AD;
 }
 
-button:hover .star-1 {
+.star-button:hover .star-1 {
     position: absolute;
     top: -80%;
     left: -30%;
@@ -94,7 +115,7 @@ button:hover .star-1 {
     z-index: 2;
 }
 
-button:hover .star-2 {
+.star-button:hover .star-2 {
     position: absolute;
     top: -25%;
     left: 10%;
@@ -104,7 +125,7 @@ button:hover .star-2 {
     z-index: 2;
 }
 
-button:hover .star-3 {
+.star-button:hover .star-3 {
     position: absolute;
     top: 55%;
     left: 25%;
@@ -114,7 +135,7 @@ button:hover .star-3 {
     z-index: 2;
 }
 
-button:hover .star-4 {
+.star-button:hover .star-4 {
     position: absolute;
     top: 30%;
     left: 80%;
@@ -124,7 +145,7 @@ button:hover .star-4 {
     z-index: 2;
 }
 
-button:hover .star-5 {
+.star-button:hover .star-5 {
     position: absolute;
     top: 25%;
     left: 115%;
@@ -134,7 +155,7 @@ button:hover .star-5 {
     z-index: 2;
 }
 
-button:hover .star-6 {
+.star-button:hover .star-6 {
     position: absolute;
     top: 5%;
     left: 60%;
@@ -147,3 +168,5 @@ button:hover .star-6 {
 .fil0 {
     fill: #D6A2AD;
 }
+
+

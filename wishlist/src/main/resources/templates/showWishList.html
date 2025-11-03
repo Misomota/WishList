@@ -20,9 +20,10 @@
                th:text="${showWish.wishListName}"></a>
         </td>
 
-        <td>
+        <td class="action-buttons">
             <a th:href="@{/Gaveaesken/editWishList(id=${showWish.id})}">
                 <button type="button" class="btn edit">
+
                     <svg class="icon" fill="none" height="24" viewBox="0 0 24 24" width="24"
                          xmlns="http://www.w3.org/2000/svg">
                         <g stroke="#333" stroke-linecap="round" stroke-width="1.4">
@@ -35,7 +36,7 @@
                 </button>
             </a>
 
-            <form th:action="@{/Gaveaesken/delete/wishList}" method="post" style="display:inline;">
+            <form th:action="@{/Gaveaesken/delete/wishList}" method="post">
                 <input type="hidden" th:name="id" th:value="${showWish.id}" />
                 <button type="submit" class="btn delete">
                     <svg viewBox="0 0 15 17.5" height="17.5" width="15"
@@ -48,6 +49,7 @@
             </form>
         </td>
     </tr>
+
     </tbody>
 </table>
 <div th:if="${#lists.isEmpty(wishList)}" style="text-align:center; margin-top:20px;">
@@ -55,11 +57,8 @@
     <p>Du har endnu ikke oprettet nogen ønskelister</p>
 </div>
 
-<a th:href="@{/Gaveaesken/addWishList}">Tilføj ønskeliste</a>
-
-
-<button>
-    Button
+    <button class="star-button">
+    <a th:href="@{/Gaveaesken/addWishList}">Tilføj ny ønskeliste</a>
     <div class="star-1">
         <svg
                 xmlns="http://www.w3.org/2000/svg"
