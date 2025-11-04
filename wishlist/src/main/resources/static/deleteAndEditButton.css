@@ -1,105 +1,44 @@
-.btn {
-    background-color: transparent;
-    position: relative;
+.icon-btn {
+    background: transparent;
     border: none;
     cursor: pointer;
     padding: 6px;
-}
-
-td {
-    vertical-align: middle;
-}
-
-.action-buttons {
-    display: flex;
-    justify-content: flex-end;
+    position: relative;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-
+    transition: transform 0.2s linear;
 }
 
-h2 {
-    text-align: center;
-}
-
-.buttonRow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-top: 20px;
+.icon-btn.icon-edit:hover svg g {
+    stroke: #D6A2AD;
+    transform: scale(1.2);
+    transition: transform 0.2s linear, stroke 0.2s linear;
 }
 
 
-button.container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-    align-items: center;
+.icon-btn.icon-delete:hover svg path {
+    fill: #D6A2AD;
+    transform: scale(1.2);
+    transition: transform 0.2s linear, fill 0.2s linear;
 }
 
-
-.btn::after {
-    position: absolute;
-    top: -130%;
+.icon-btn::after {
+    content: attr(data-tooltip);
+    position: relative;
+    top: -25px;
     left: 50%;
     transform: translateX(-50%);
-    color: #000000;
-    background: none;
-    padding: 0;
-    border-radius: 0;
-    transition: .2s linear;
-    transition-delay: .2s;
-    text-transform: uppercase;
     font-size: 12px;
+    color: #333;
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
     opacity: 0;
-    visibility: hidden;
-    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.2s;
 }
 
-
-.edit::after {
-    content: 'rediger ønske';
-}
-
-.delete::after {
-    content: 'slet ønske';
-}
-
-
-.icon {
-    transform: scale(1.2);
-    transition: .2s linear;
-}
-
-
-.btn:hover > .icon {
-    transform: scale(1.5);
-}
-
-.btn:hover::after {
-    visibility: visible;
+.icon-btn:hover::after {
     opacity: 1;
-    top: -160%;
-}
-
-
-.edit:hover > .icon g {
-    stroke: #d6a2ad;
-}
-
-.delete:hover > .icon path {
-    fill: #d6a2ad;
 }

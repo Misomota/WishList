@@ -1,10 +1,17 @@
-.star-button {
+.add-wishlist-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.add-wishlist-container .star-button {
     position: relative;
     padding: 12px 35px;
     background: #482960;
     font-size: 17px;
     font-weight: 500;
-    color: #FFFF;
+    color: #fff;
     border: 3px solid #482960;
     border-radius: 8px;
     box-shadow: 0 0 0 #482960;
@@ -18,155 +25,114 @@
     display: flex;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-}
-
-
-a {
+.add-wishlist-container .star-button a {
     color: #fff;
-    background: #482960;
+    text-decoration: none;
+    background: transparent;
 }
 
-.star-1 {
+.add-wishlist-container .star-1,
+.add-wishlist-container .star-2,
+.add-wishlist-container .star-3,
+.add-wishlist-container .star-4,
+.add-wishlist-container .star-5,
+.add-wishlist-container .star-6 {
     position: absolute;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+}
+
+.add-wishlist-container .star-1 {
     top: 20%;
     left: 20%;
     width: 25px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
     transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
 }
 
-.star-2 {
-    position: absolute;
+.add-wishlist-container .star-2 {
     top: 45%;
     left: 45%;
     width: 15px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
     transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
 }
 
-.star-3 {
-    position: absolute;
+.add-wishlist-container .star-3 {
     top: 40%;
     left: 40%;
     width: 5px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
     transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
 }
 
-.star-4 {
-    position: absolute;
+.add-wishlist-container .star-4 {
     top: 20%;
     left: 40%;
     width: 8px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
     transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
 }
 
-.star-5 {
-    position: absolute;
+.add-wishlist-container .star-5 {
     top: 25%;
     left: 45%;
     width: 15px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
     transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
 }
 
-.star-6 {
-    position: absolute;
+.add-wishlist-container .star-6 {
     top: 5%;
     left: 50%;
     width: 5px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
     transition: all 0.8s ease;
 }
 
-.star-button:hover {
+/* Hover effect */
+.add-wishlist-container .star-button:hover {
     background: #482960;
     color: #FFFFFF;
     box-shadow: 0 0 25px #D6A2AD;
 }
 
-.star-button:hover .star-1 {
-    position: absolute;
+.add-wishlist-container .star-button:hover .star-1 {
     top: -80%;
     left: -30%;
-    width: 25px;
-    height: auto;
     filter: drop-shadow(0 0 10px #D6A2AD);
     z-index: 2;
 }
 
-.star-button:hover .star-2 {
-    position: absolute;
+.add-wishlist-container .star-button:hover .star-2 {
     top: -25%;
     left: 10%;
-    width: 15px;
-    height: auto;
     filter: drop-shadow(0 0 10px #D6A2AD);
     z-index: 2;
 }
 
-.star-button:hover .star-3 {
-    position: absolute;
+.add-wishlist-container .star-button:hover .star-3 {
     top: 55%;
     left: 25%;
-    width: 5px;
-    height: auto;
     filter: drop-shadow(0 0 10px #D6A2AD);
     z-index: 2;
 }
 
-.star-button:hover .star-4 {
-    position: absolute;
+.add-wishlist-container .star-button:hover .star-4 {
     top: 30%;
     left: 80%;
-    width: 8px;
-    height: auto;
     filter: drop-shadow(0 0 10px #D6A2AD);
     z-index: 2;
 }
 
-.star-button:hover .star-5 {
-    position: absolute;
+.add-wishlist-container .star-button:hover .star-5 {
     top: 25%;
     left: 115%;
-    width: 15px;
-    height: auto;
     filter: drop-shadow(0 0 10px #D6A2AD);
     z-index: 2;
 }
 
-.star-button:hover .star-6 {
-    position: absolute;
+.add-wishlist-container .star-button:hover .star-6 {
     top: 5%;
     left: 60%;
-    width: 5px;
-    height: auto;
     filter: drop-shadow(0 0 10px #D6A2AD);
     z-index: 2;
 }
 
-.fil0 {
+.add-wishlist-container .fil0 {
     fill: #D6A2AD;
 }
-
-

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Ønsker i listen</title>
 
-    <link rel="stylesheet" href="/deleteAndEditButton.css">
     <link rel="stylesheet" href="/button.css">
+    <link rel="stylesheet" href="/deleteAndEditButton.css">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
         <td>
 
             <a th:href="@{/Gaveaesken/editGiftWish(id=${wish.giftId}, wishListId=${wishListId})}">
-                <button type="button" class="btn edit">
+                <button type="button" class="icon-btn edit">
                     <svg class="icon" fill="none" height="24" viewBox="0 0 24 24" width="24"
                          xmlns="http://www.w3.org/2000/svg">
                         <g stroke="#333" stroke-linecap="round" stroke-width="1.4">
@@ -35,7 +35,7 @@
             <form th:action="@{/Gaveaesken/delete/giftWish}" method="post" style="display:inline;">
                 <input type="hidden" name="id" th:value="${wish.giftId}" />
                 <input type="hidden" name="wishListId" th:value="${wishListId}" />
-                <button type="submit" class="btn delete">
+                <button type="submit" class="icon-btn delete">
                     <svg viewBox="0 0 15 17.5" height="17.5" width="15"
                          xmlns="http://www.w3.org/2000/svg" class="icon">
                         <path transform="translate(-2.5 -1.25)"
@@ -51,8 +51,8 @@
 
 <br>
 <div>
-<a th:href="@{/Gaveaesken/addWish(wishListId=${wishListId})}" class="btn">Tilføj nyt ønske</a>
-<a th:href="@{/Gaveaesken/MyWishList}" class="btn">Tilbage til mine ønskelister</a>
+<a th:href="@{/Gaveaesken/addWish(wishListId=${wishListId})}" class="btn-icon">Tilføj nyt ønske</a>
+<a th:href="@{/Gaveaesken/MyWishList}" class="btn-icon">Tilbage til mine ønskelister</a>
 </div>
 </body>
 </html>
