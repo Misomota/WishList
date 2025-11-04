@@ -23,7 +23,7 @@
 
         <td class="action-buttons">
             <a th:href="@{/Gaveaesken/editWishList(id=${showWish.id})}">
-                <button type="button" class="icon-btn icon-edit" data-tooltip="Rediger Ønske">
+                <button type="button" class="icon-btn edit">
 
                     <svg class="icon" fill="none" height="24" viewBox="0 0 24 24" width="24"
                          xmlns="http://www.w3.org/2000/svg">
@@ -36,10 +36,11 @@
                     </svg>
                 </button>
             </a>
-
+        </td>
+        <td>
             <form th:action="@{/Gaveaesken/delete/wishList}" method="post">
                 <input type="hidden" th:name="id" th:value="${showWish.id}" />
-                <button type="submit" class="icon-btn icon-delete" data-tooltip="Slet Ønske">
+                <button type="submit" class="icon-btn delete">
                     <svg viewBox="0 0 15 17.5" height="17.5" width="15"
                          xmlns="http://www.w3.org/2000/svg" class="icon">
                         <path transform="translate(-2.5 -1.25)"
