@@ -2,19 +2,32 @@
 <html lang="da" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mine Ønskelister</title>
 
     <link rel="icon" href="/images/Gifty.PNG" type="image/png">
     <link rel="shortcut icon" href="/images/Gifty.PNG" type="image/png">
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/header.css">
     <link rel="stylesheet" href="/layout.css">
     <link rel="stylesheet" href="/deleteAndEditButton.css">
     <link rel="stylesheet" href="/starButton.css">
-
 </head>
 
 <body>
+
+<header class="topbar">
+    <a href="/Gaveaesken/MyWishList" class="logo-link">
+        <img src="/images/Gifty.PNG" alt="Logo" class="logo">
+        <span class="site-name">GAVEÆSKEN</span>
+    </a>
+</header>
+
+<main>
 <h2>Dine Ønskelister</h2>
+
 <table>
     <tbody>
     <tr th:each="showWish : ${wishList}">
@@ -179,5 +192,6 @@
     </div>
 </button>
 </div>
+</main>
 </body>
 </html>
