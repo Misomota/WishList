@@ -28,8 +28,9 @@ public class UserController {
 
     @PostMapping("/Register")
     public String registerUser(@ModelAttribute User user, Model model) {
-            model.addAttribute("signupMessage", "User registered successfully!");
-            return "showWishList";
+        userService.saveUser(user);
+        model.addAttribute("signupMessage", "User registered successfully!");
+        return "showWishList";
     }
 
     //User Login. Hvis login er korrekt, return showWishList(kan ændres til profilsiden senere).

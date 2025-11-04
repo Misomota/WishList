@@ -26,8 +26,8 @@ public class UserRepository {
 
         jdbcTemplate.update(conection -> {
             PreparedStatement preparedStatement = conection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setString(1, user.getPassword());
             preparedStatement.setString(2, user.getUsername());
+            preparedStatement.setString(1, user.getPassword());
             return preparedStatement;
         });
         return user;
