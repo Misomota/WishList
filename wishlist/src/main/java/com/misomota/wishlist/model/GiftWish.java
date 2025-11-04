@@ -17,7 +17,7 @@ public class GiftWish {
         return giftWishName;
     }
 
-    public void setGiftWishName(String giftWishName) {
+   public void setGiftWishName(String giftWishName) {
         this.giftWishName = giftWishName;
     }
 
