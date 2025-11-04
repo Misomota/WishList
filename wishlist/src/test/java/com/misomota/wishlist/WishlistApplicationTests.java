@@ -5,8 +5,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class WishlistApplicationTests {
+    @Test
+    void name() {
 
-	@Test
+    }
+
+    @Test
 	void contextLoads() {
 	}
 
