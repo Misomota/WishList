@@ -5,10 +5,22 @@
     <title>Rediger ønske</title>
     <link rel="icon" href="/images/favicon.ico" type="image/png">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/header.css">
     <link rel="stylesheet" href="/button.css">
     <link rel="stylesheet" href="/headlineAndInput.css">
 </head>
 <body>
+
+<header class="topbar">
+    <a href="/Gaveaesken/MyWishList" class="logo-link">
+        <img src="/images/Gifty.PNG" alt="Logo" class="logo">
+        <span class="site-name">GAVEÆSKEN</span>
+    </a>
+</header>
+
 <h2>Rediger ønske</h2>
 
 <form th:action="@{/Gaveaesken/updateGiftWish(wishListId=${wishListId})}" th:object="${giftWish}" method="post">
