@@ -1,4 +1,4 @@
-.btn {
+.icon-btn {
     background-color: transparent;
     position: relative;
     border: none;
@@ -54,7 +54,7 @@ button.container {
 }
 
 
-.btn::after {
+.icon-btn::after {
     position: absolute;
     top: -130%;
     left: 50%;
@@ -73,11 +73,11 @@ button.container {
 }
 
 
-.edit::after {
+.icon-edit::after {
     content: 'rediger ønske';
 }
 
-.delete::after {
+.icon-delete::after {
     content: 'slet ønske';
 }
 
@@ -88,21 +88,21 @@ button.container {
 }
 
 
-.btn:hover > .icon {
+.icon-btn:hover > .icon {
     transform: scale(1.5);
 }
 
-.btn:hover::after {
+.icon-btn:hover::after {
     visibility: visible;
     opacity: 1;
     top: -160%;
 }
 
 
-.edit:hover > .icon g {
+.icon-edit:hover > .icon g {
     stroke: #d6a2ad;
 }
 
-.delete:hover > .icon path {
+.icon-delete:hover > .icon path {
     fill: #d6a2ad;
 }
