@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+td {
+    vertical-align: middle;
+    horiz-align: center;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+}

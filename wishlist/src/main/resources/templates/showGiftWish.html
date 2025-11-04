@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <title>Ønsker i listen</title>
 
+    <link rel="icon" href="/images/Gifty.PNG" type="image/png">
+    <link rel="shortcut icon" href="/images/Gifty.PNG" type="image/png">
+
+    <link rel="stylesheet" href="/layout.css">
     <link rel="stylesheet" href="/button.css">
     <link rel="stylesheet" href="/deleteAndEditButton.css">
 </head>
 <body>
 
-<h2 th:text="'Ønsker i: ' + ${wishListId}"></h2>
+<h2 th:text="'Ønsker i din ønskeliste '"></h2>
 
 <table>
     <tbody>
@@ -19,6 +23,7 @@
 
             <a th:href="@{/Gaveaesken/editGiftWish(id=${wish.giftId}, wishListId=${wishListId})}">
                 <button type="button" class="icon-btn edit">
+
                     <svg class="icon" fill="none" height="24" viewBox="0 0 24 24" width="24"
                          xmlns="http://www.w3.org/2000/svg">
                         <g stroke="#333" stroke-linecap="round" stroke-width="1.4">
@@ -49,10 +54,18 @@
     </tbody>
 </table>
 
+<div th:if="${#lists.isEmpty(giftWish)}" style="text-align:center; margin-top:20px;">
+    <img src="/images/GiftySleep.PNG" alt="Ingen ønsker endnu" width="150" height="150">
+    <p>Du har endnu ikke oprettet et ønske</p>
+</div>
+
 <br>
 <div>
-<a th:href="@{/Gaveaesken/addWish(wishListId=${wishListId})}" class="btn-icon">Tilføj nyt ønske</a>
-<a th:href="@{/Gaveaesken/MyWishList}" class="btn-icon">Tilbage til mine ønskelister</a>
+<a th:href="@{/Gaveaesken/addWish(wishListId=${wishListId})}">
+    <button type="button" class="btn"> Tilføj nyt ønske</button>
+</a>
+<a th:href="@{/Gaveaesken/MyWishList}">
+    <button type="button" class="btn"> Tilbage til ønskelisten</button> </a>
 </div>
 </body>
 </html>
