@@ -18,7 +18,6 @@ Gaveæsken er designet til at være enkelt at anvende og kan bruges i forbindels
 - Spring Web
 - JDBC Template
 - H2 til integrationstest
-- MySQL Azure Database
 - Qodana
 
 ### Frontend
